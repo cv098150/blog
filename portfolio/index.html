@@ -1,22 +1,15 @@
 ---
 layout: default
-title: Blog - list
+title: Blog - portfolio-list
 ---
+
 <section class="blog-list px-3 py-5 p-md-5">
 
-    {% for post in site.categories.php %}
+    {% for post in site.categories.portfolio %}
     <div class="item mb-5">
         <div class="row g-3 g-xl-0">
-            <div class="col-2 col-xl-3">
-                <img class="img-fluid post-thumb " src="assets/images/blog/blog-post-thumb-2.jpg" alt="image">
-            </div>
             <div class="col">
                 <h3 class="title mb-1"><a class="text-link" href="{{ post.url }}">{{ post.title }}</a></h3>
-                <div class="meta mb-1">
-                    <span class="date">Published 3 months ago</span>
-                    <span class="time">3 min read</span>
-                    <span class="comment"><a class="text-link" href="#">26 comments</a></span>
-                </div>
                 <div class="intro">{{ post.excerpt }}...</div>
                 <a class="text-link" href="{{ post.url }}">Read more &rarr;</a>
             </div>
@@ -25,5 +18,7 @@ title: Blog - list
         <!--//row-->
     </div>
     <!--//item-->
+    {% else %}
+    <p class="text-center">No result</p>
     {% endfor %}
 </section>

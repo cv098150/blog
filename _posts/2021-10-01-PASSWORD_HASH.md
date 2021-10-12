@@ -1,7 +1,8 @@
 ---
 layout: post
 title: PASSWORD_HASH
-categories: php
+categories: work
+tags: php
 ---
 
 
