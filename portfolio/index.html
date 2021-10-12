@@ -5,20 +5,22 @@ title: Blog - portfolio-list
 
 <section class="blog-list px-3 py-5 p-md-5">
 
-    {% for post in site.categories.portfolio %}
-    <div class="item mb-5">
-        <div class="row g-3 g-xl-0">
-            <div class="col">
-                <h3 class="title mb-1"><a class="text-link" href="{{ post.url }}">{{ post.title }}</a></h3>
-                <div class="intro">{{ post.excerpt }}...</div>
-                <a class="text-link" href="{{ post.url | prepend:site.baseurl }}">Read more &rarr;</a>
+    <div class="container single-col-max-width">
+        {% for post in site.categories.portfolio %}
+        <div class="item mb-5">
+            <div class="row g-3 g-xl-0">
+                <div class="col">
+                    <h3 class="title mb-1"><a class="text-link" href="{{ post.url }}">{{ post.title }}</a></h3>
+                    <div class="intro">{{ post.excerpt }}...</div>
+                    <a class="text-link" href="{{ post.url | prepend:site.baseurl }}">Read more &rarr;</a>
+                </div>
+                <!--//col-->
             </div>
-            <!--//col-->
+            <!--//row-->
         </div>
-        <!--//row-->
+        <!--//item-->
+        {% else %}
+        <p class="text-center">No result</p>
+        {% endfor %}
     </div>
-    <!--//item-->
-    {% else %}
-    <p class="text-center">No result</p>
-    {% endfor %}
 </section>
